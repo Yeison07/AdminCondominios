@@ -3,6 +3,8 @@ package co.edu.ufps.controller;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import co.edu.ufps.model.Authority;
 import co.edu.ufps.model.Domicilio;
 import co.edu.ufps.model.Miembro;
+import co.edu.ufps.model.Servicio;
 import co.edu.ufps.service.interfac.IAuthorityService;
 import co.edu.ufps.service.interfac.IMiembroService;
 
@@ -42,7 +45,11 @@ public class MiembroController {
 	}
 	
 	@PostMapping("/SolicitarServicio")
-	public String solicitarServi() {
+	public String solicitarServi(@ModelAttribute Servicio servicio,HttpServletRequest request) {
+		String user=request.getUserPrincipal().getName();
+		Miembro miembro=miembroService.findByCorreo(user).orElse(null);
+		miembro.getServicios().add(servicio);
+		miembroService.insertar(miembro);
 		return "redirect:/welcome";
 	}
 

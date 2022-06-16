@@ -40,8 +40,10 @@ public class VistaController {
 	
 	@GetMapping("/servicio")
 	public String servicio(Model model) {
+		Servicio servicio= new Servicio();
 		List<Servicio> servicios= servicioService.findAll();
 		model.addAttribute("servicios", servicios);
+		model.addAttribute("servicio", servicio);
 		return "servicio";
 	}
 	

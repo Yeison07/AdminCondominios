@@ -38,10 +38,10 @@
         </div>
         
         <div class="choose-servicio">
-        <form th:action="@{/SolicitarServicio}" th:object="${miembro}" method="post">
+        <form th:action="@{/SolicitarServicio}" th:object="${servicio}" method="post">
             <label for="servicioA">Servicio a solicitar</label>
-            <select name="" id="">
-                <option th:each="servi:${servicios}" th:value="servi.id" th:text="servi.descripcion"></option>
+            <select th:field="${servicio.id}" name="" id="">
+                <option th:each="servi:${servicios}" th:value="${servi.id}" th:text="${servi.nombre}"></option>
             </select>
             
             <label for="desde">Desde</label>
@@ -53,6 +53,10 @@
             <select name="hasta" id="">
                 <option th:value="1">22:00</option>
             </select>
+            
+            <div>
+                    <input class="registerButton" type="submit" value="Solicitar servicio">
+                </div>
              </form>
         </div>
     </div>
