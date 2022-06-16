@@ -3,15 +3,17 @@ package co.edu.ufps.model;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="horario")
 public class Horario {
 
+	@Id
 	private Integer id;
-	private Date horaInicio;
-	private Date horaFin;
+	private String horaInicio;
+	private String horaFin;
 	
 	public Horario() {
 		super();
@@ -23,18 +25,19 @@ public class Horario {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Date getHoraInicio() {
+	public String getHoraInicio() {
 		return horaInicio;
 	}
-	public void setHoraInicio(Date horaInicio) {
+	public void setHoraInicio(String horaInicio) {
 		this.horaInicio = horaInicio;
 	}
-	public Date getHoraFin() {
+	public String getHoraFin() {
 		return horaFin;
 	}
-	public void setHoraFin(Date horaFin) {
+	public void setHoraFin(String horaFin) {
 		this.horaFin = horaFin;
 	}
+	
 	
 	
 }

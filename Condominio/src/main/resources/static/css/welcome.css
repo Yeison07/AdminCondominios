@@ -1,0 +1,71 @@
+input{
+    border: none;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.back-welcome{
+    width: 100%;
+    margin-bottom: 5em;
+   
+}
+
+.welcome-text{
+    font-size: 45px;
+    letter-spacing: 3px;
+    margin: 2em 0;
+    font-weight: 500;
+}
+.main-select{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+
+
+.main-select img{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+}
+
+.img-pay{
+    left: 44em;
+}
+
+.img-coffe{
+    right: 25em;
+}
+
+.select-deudas{
+    width: 280px;
+    height: 110px;
+    background-color:#ADF7B6;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.select-deudas:hover{
+    background-color: #8cf699;
+}
+.select-servicio{
+    width: 280px;
+    height: 110px;
+    background-color: #FFC09F;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.select-servicio:hover{
+    background-color: #ffab7d;
+}
+
+footer{
+    margin-top: 15em;
+}

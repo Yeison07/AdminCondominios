@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/registarMiembro.css">
+    <title>Registrar miembros</title>
+</head>
+<body>
+    <header>
+        <div class="header-admin-back">
+
+        </div>
+    </header>
+    <div class="admin-main">
+        <div class="sidebar">
+            <div>
+                <a href="">Registrar miembro</a>
+            </div>
+            <div>
+                <a href="">Administrar miembros</a>
+            </div>
+            <div>
+                <a href="">Generar multa</a>
+            </div>
+            <div>
+                <a href="">Administrar gastos</a>
+            </div>
+            <div>
+                <a href="">Administrar sitio web</a>
+            </div>
+        </div>
+        <div class="container-register-member">
+            <p>Registrar miembro</p>
+            <form th:action="@{/registroMiembro/insertar}" th:object="${miembro}" method="post"> 
+                <div>
+                    <label for="InputDocumento">Documento</label>
+                    <input th:field="*{documento}" required name="InputDocumento"type="text" >
+                </div>
+                
+                <div>
+                    <label for="InputNombre">Nombre</label>
+                    <input th:field="*{nombre}" required name="InputNombre"type="text">
+                </div>
+                
+                <div>
+                    <label for="InputApellido">Apellido</label>
+                    <input th:field="*{apellido}" required name="InputApellido"type="text">
+                </div>
+               
+                <div>
+                    <label for="FechaNac">Fecha de nacimiento</label>
+                    <input th:field="*{fechaNac}" required name="FechaNac"type="text">
+                </div>
+                
+                <div>
+                    <label for="TipoM">Tipo de miembro</label>
+                    <select th:field="*{tipoMiembro}" required name="TipoM" id="">
+                        <option value="propietario">Propietario</option>
+                        <option value="residente">Residente</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="InputUser">Usuario</label>
+                    <input th:field="*{user}" required name="InputUser"type="text">
+                </div>
+                
+                <div>
+                    <label for="InputPassword">Clave</label>
+                    <input th:field="*{password}" required name="InputPassword"type="text">
+                </div>
+                
+                <div>
+                    <label for="domicilio">Domicilio</label>
+                    <select th:field="*{domicilios}" required name="domicilio" id="">
+                        <option th:value="${domi.id}" th:each="domi:${ldomicilios}" th:text="${domi.id}"></option>
+                    </select>
+                </div>
+
+                <div>
+                    <input class="registerButton" type="submit" value="Registrar">
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</body>
+</html>

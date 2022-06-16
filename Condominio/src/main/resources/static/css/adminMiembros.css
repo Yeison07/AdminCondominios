@@ -1,0 +1,95 @@
+.container-table-user{
+    margin: 0 auto;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+th,td{
+    padding: 1em 1.5em;
+}
+
+.container-table-user p{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+table input{
+    height: 35px;
+    background-color: #e04242;
+    color: #fff;
+    
+}
+
+table input:hover{
+    background-color: #f5a1a1;
+}
+
+.gmulta{
+    height: 35px;
+    background-color: #4fce5d;
+    color: black;
+}
+
+.gmulta:hover{
+    background-color: #98f1a3;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0em;
+    top: 0em;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 350px; 
+    height: 350px;
+  }
+
+  
+  .modal-content input{
+    width: 200px;
+    height: 20px;
+  }
+  
+  .modal-content div{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 1em 0;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-title{
+    font-size: 22px;
+    font-weight: 600;
+  }

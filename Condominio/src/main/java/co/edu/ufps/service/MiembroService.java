@@ -49,7 +49,7 @@ public class MiembroService implements IMiembroService{
 	@Override
 	public Optional<Miembro> findByCorreo(String correo) {
 		// TODO Auto-generated method stub
-		return miembroRepo.findByCorreo(correo);
+		return miembroRepo.findByUser(correo);
 	}
 
 }

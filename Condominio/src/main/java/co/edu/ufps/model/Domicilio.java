@@ -46,6 +46,11 @@ public class Domicilio {
 	public void setMiembro(Miembro miembro) {
 		this.miembro = miembro;
 	}
+
+	@Override
+	public String toString() {
+		return "Domicilio [id=" + id + ", nro_habitantes=" + nro_habitantes + ", miembro=" + miembro + "]";
+	}
 	
 	
 }

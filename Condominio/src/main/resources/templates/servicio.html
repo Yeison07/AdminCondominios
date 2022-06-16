@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar servicio</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/servicio.css">
+</head>
+<body>
+    <header>
+        <div class="header-back">
+            <div class="home-container">
+                <p>HOME</p>
+                <img src="img/icons/home.svg" alt="">
+            </div>
+            <div class="login-container">
+                <img src="img/icons/user.svg" alt="">
+                <p>Iniciar sesion</p>
+            </div>
+			<div>
+			<form th:action="@{/logout}" method="post">
+							<input type="submit" value="Cerrar Sesion" />
+						</form>
+			</div>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="container-servicio-text">
+            <p class="servicio-text">Solicitar servicio</p>
+            <hr>
+        </div>
+        <div class="background-img-container">
+            <img class="servicio-back" src="img/bckg/atman-studios-UPolqOrkbno-unsplash.jpg" alt="">
+        </div>
+        
+        <div class="choose-servicio">
+        <form th:action="@{/SolicitarServicio}" th:object="${miembro}" method="post">
+            <label for="servicioA">Servicio a solicitar</label>
+            <select name="" id="">
+                <option th:each="servi:${servicios}" th:value="servi.id" th:text="servi.descripcion"></option>
+            </select>
+            
+            <label for="desde">Desde</label>
+            <select name="desde" id="">
+                <option th:value="1">10:00</option>
+            </select>
+            
+            <label for="hasta">Hasta</label>
+            <select name="hasta" id="">
+                <option th:value="1">22:00</option>
+            </select>
+             </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-item"> 
+            <p class="subtitle">
+                Footer title 1
+            </p>
+            <div>
+                <ul class="bullet-home">
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-item">
+            <p class="subtitle">
+                Footer title 2
+            </p>
+            <div>
+                <ul class="bullet-home">
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-item">
+            <p class="subtitle">
+                Footer title 3
+            </p>
+            <div>
+                <ul class="bullet-home">
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

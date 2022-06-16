@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/home.css}">
+    <link rel="stylesheet" href="css/normalize.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div class="header-back">
+         <a th:href="@{/}">
+            <div class="home-container">
+                <p>HOME</p>
+                <img src="img/icons/home.svg" alt="">
+            </div>
+             </a>
+             <a th:href="@{/login}">
+            <div class="login-container">
+                <img src="img/icons/user.svg" alt="">
+                <p>Iniciar sesion</p>
+            </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="banner-home">
+            <img src="img/bckg/jimmy-conover-dvurMDsj09Y-unsplash.png" alt="">
+        </div>
+        <div class="info-container">
+            <p class="title">
+                Anuncios
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti alias quo expedita, at excepturi quaerat corporis eveniet eos accusamus exercitationem nostrum voluptatem illo dolore laborum necessitatibus unde, esse repudiandae id!
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi cumque consectetur doloremque est, repudiandae, id minus ipsum et doloribus nemo cupiditate facilis quam quis aliquam totam autem temporibus ducimus. Tempore?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam tempore tempora eum molestias quisquam necessitatibus numquam pariatur maxime. Eius nulla perferendis error quod facere corrupti veritatis, vero iste praesentium exercitationem!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptas explicabo qui enim laudantium, aperiam sapiente autem atque commodi, sequi ad, nobis obcaecati ratione itaque incidunt? Aliquam, in vero. Odio!
+            </p>
+        </div>
+        
+    </div>
+    <div class="body-bckg-line">
+        <img src="img/bckg/tom-rumble-7lvzopTxjOU-unsplash.png" alt="">
+    </div>
+    <footer>
+        <div class="footer-item"> 
+            <p class="subtitle">
+                Footer title 1
+            </p>
+            <div>
+                <ul class="bullet-home">
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-item">
+            <p class="subtitle">
+                Footer title 2
+            </p>
+            <div>
+                <ul class="bullet-home">
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-item">
+            <p class="subtitle">
+                Footer title 3
+            </p>
+            <div>
+                <ul class="bullet-home">
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                    <li>Insert texte here</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

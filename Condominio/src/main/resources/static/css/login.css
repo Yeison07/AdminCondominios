@@ -1,0 +1,40 @@
+.login-backg{
+    background-color: #fff;
+    border-radius: 15px;
+    width: 720px;
+    height: 600px;
+    margin: 5em auto;
+    padding-top: 1em;
+}
+
+.title{
+    padding: 0.5em 0em 0.5em 1em;
+    background-color: #b9b9b920;
+    width: 530px;
+    
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+form div input {
+    margin-left: 2.5em;
+    margin-bottom: 3em;   
+    height: 30px;
+    border: 1px solid #b9b9b9;
+}
+
+form div label {
+    margin-bottom: 3.5em;
+}

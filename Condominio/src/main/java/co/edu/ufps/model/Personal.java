@@ -1,6 +1,7 @@
 package co.edu.ufps.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 @Table(name = "personal")
 public class Personal {
 
+	@Id
 	private Integer id;
 	private Integer documento;
 	private String nombre,apellido;

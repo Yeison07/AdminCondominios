@@ -8,5 +8,5 @@ import co.edu.ufps.model.Miembro;
 
 public interface MiembroRepo extends CrudRepository<Miembro, Integer>{
 
-	public Optional <Miembro> findByCorreo(String correo); 
+	public Optional <Miembro> findByUser(String correo); 
 }

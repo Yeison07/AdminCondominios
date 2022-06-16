@@ -1,5 +1,6 @@
 package co.edu.ufps.model;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -19,20 +20,21 @@ public class Miembro {
 	@Id
 	private Integer documento;
 	private String nombre,apellido,user,tipoMiembro,password;
+	private Date fechaNac;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany
 	@JoinTable(name="miembro_sancion",
 	joinColumns=@JoinColumn(name="documento_miembro"),
 	inverseJoinColumns=@JoinColumn(name="sancion_id"))
 	private List<Sancion>sanciones;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany
 	@JoinTable(name="miembro_servicio",
 	joinColumns=@JoinColumn(name="documento_miembro"),
 	inverseJoinColumns=@JoinColumn(name="servicio_id"))
 	private List<Servicio>servicios;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany
 	@JoinTable(name="miembro_gasto",
 	joinColumns=@JoinColumn(name="documento_miembro"),
 	inverseJoinColumns=@JoinColumn(name="gasto_id"))
@@ -139,6 +141,15 @@ public class Miembro {
 	public void setAuthority(Set<Authority> authority) {
 		this.authority = authority;
 	}
+
+	public Date getFechaNac() {
+		return fechaNac;
+	}
+
+	public void setFechaNac(Date fechaNac) {
+		this.fechaNac = fechaNac;
+	}
+	
 	
 	
 	
