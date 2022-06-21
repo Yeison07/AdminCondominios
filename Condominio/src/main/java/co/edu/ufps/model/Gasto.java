@@ -67,6 +67,12 @@ public class Gasto {
 	public void setTipoGasto(TipoGasto tipoGasto) {
 		this.tipoGasto = tipoGasto;
 	}
+
+	@Override
+	public String toString() {
+		return "Gasto [id=" + id + ", descripcio=" + descripcio + ", valor=" + valor + ", pago_oportuno="
+				+ pago_oportuno + ", tipoGasto=" + tipoGasto + "]";
+	}
 	
 	
 }

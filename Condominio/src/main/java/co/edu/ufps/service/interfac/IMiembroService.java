@@ -12,5 +12,6 @@ public interface IMiembroService {
 	public Miembro findMiembro(Integer id);
 	public void delete(Integer id);
 	public Optional<Miembro> findByCorreo(String correo);
+	public void Update(Miembro miembro);
 
 }

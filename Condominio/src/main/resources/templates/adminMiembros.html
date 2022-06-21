@@ -1,117 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/adminMiembros.css">
-    <link rel="stylesheet" href="css/registarMiembro.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <title>Administrar miembros</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/adminMiembros.css">
+	<link rel="stylesheet" href="css/registarMiembro.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<title>Administrar miembros</title>
 </head>
+
 <body>
-    <header>
-        <div class="header-admin-back">
+	<header>
+		<div class="header-admin-back">
 
-        </div>
-    </header>
-    <div class="admin-main">
-        <div class="sidebar">
-            <div>
-                <a href="">Registrar miembro</a>
-            </div>
-            <div>
-                <a href="">Administrar miembros</a>
-            </div>
-            <div>
-                <a href="">Administrar gastos</a>
-            </div>
-            <div>
-                <a href="">Administrar sitio web</a>
-            </div>
-        </div>
-        <div class="container-table-user">
-            <p>Listado de miembros actuales</p>
-            <table>
-                <tr>
-                    <th>
-                        Documento
-                    </th>
-                    <th>
-                        Nombre
-                    </th>
-                    <th>
-                        Apellido
-                    </th>
-                    <th>
-                        User
-                    </th>
-                    <th>
-                        Tipo
-                    </th>
-                    <th>Cobro</th>
-                    <th>Eliminar</th>
-                </tr>
-                <tr>
-                    <td>1123468</td>
-                    <td>Jose</td>
-                    <td>Feliciano</td>
-                    <td>jose@hotmail.com</td>
-                    <td>Residente</td>
-                    <td>
-                        <button class="gmulta" id="myBtn">Generar cobro</button>
-                    </td>
-                    <td>
-                        <input type="submit" value="Eliminar">
-                    </td>
-                </tr>
-                <tr>
-                    <td>1123468</td>
-                    <td>Jose</td>
-                    <td>Feliciano</td>
-                    <td>jose@hotmail.com</td>
-                    <td>Residente</td>
-                    <td>
-                        <button class="gmulta" id="myBtn">Generar cobro</button>
-                    </td>
-                    <td>
-                        <input type="submit" value="Eliminar">
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-<!-- Trigger/Open The Modal -->
+		</div>
+	</header>
+	<div class="admin-main">
+		<div class="sidebar">
+			<div>
+				<a href="">Registrar miembro</a>
+			</div>
+			<div>
+				<a href="">Administrar miembros</a>
+			</div>
+			<div>
+				<a href="">Administrar gastos</a>
+			</div>
+			<div>
+				<a href="">Administrar sitio web</a>
+			</div>
+		</div>
+		<div class="container-table-user">
+			<p>Listado de miembros actuales</p>
+			<table>
+				<tr>
+					<th>
+						Documento
+					</th>
+					<th>
+						Nombre
+					</th>
+					<th>
+						Apellido
+					</th>
+					<th>
+						User
+					</th>
+					<th>
+						Tipo
+					</th>
+					<th>Seleccionar cobro</th>
+					<th>Asignar cobro</th>
+					<th>Eliminar miembro</th>
 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-          <div>
-            <p class="modal-title">Ingresar datos cobro</p>
-            <span class="close">&times;</span></div>
-          
-          <div>
-              <label for="descri">Descripcion gasto</label>
-              <input id="descri" type="text">
-          </div>
+				</tr>
+				<tr th:each="miemb:${miembros}">
+					<form th:action="@{/registrarMulta/{doc}(doc=${miemb.documento})}" th:object="${gasto}" method="get">
+						
+						<td th:text="${miemb.documento}">
+					
+						</td>
+						
+						<td th:text="${miemb.nombre}"></td>
+						<td th:text="${miemb.apellido}"></td>
+						<td th:text="${miemb.user}"></td>
+						<td th:text="${miemb.tipoMiembro}"></td>
+						<td>
+							<select th:field="${gasto.id}" name="" id="">
+								<option th:each="gasto:${gastos}" th:value="${gasto.id}" th:text="${gasto.descripcio}">
+								</option>
+							</select>
+						</td>
+						<td>
 
-          <div>
-              <label for="valor">Valor</label>
-              <input id="valor" type="number">
-          </div>
-
-          <div>
-              <label for="pagoo">Pago oportuno</label>
-              <input id="pagoo" type="date">
-          </div>
-<div>
-    
-              <label for="tipoc">Tipo de cobro</label>
-              <select id="tipoc" >
-                <option value="">Multa</option>
-                <option value="">Fiesta</option>
-              </select>
-</div>
-        </div>
-    <script src="js/script.js"></script>
+							<input class="registerButton" type="submit" value="Asignar cobro">
+						</td>
+		</div>
+		<td>
+			<input type="submit" value="Eliminar">
+		</td>
+		</tr>
+		</table>
+	</div>
+	</div>
+	<script src="js/script.js"></script>
 </body>
+
 </html>

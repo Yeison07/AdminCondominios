@@ -41,6 +41,11 @@ public class Authority {
 	public Authority() {
 		super();
 	}
+
+	@Override
+	public String toString() {
+		return "Authority [id=" + id + ", authority=" + authority + "]";
+	}
 	
 	
 }

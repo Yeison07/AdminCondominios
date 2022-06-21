@@ -29,7 +29,9 @@ public class MiembroService implements IMiembroService{
 	@Override
 	public void insertar(Miembro miembro) {
 		// TODO Auto-generated method stub
+		System.err.println("antes" + miembro.getPassword());
 		miembro.setPassword(passwordEncoder.encode(miembro.getPassword()));
+		System.err.println("despues" + miembro.getPassword());
 		miembroRepo.save(miembro);
 		
 	}
@@ -50,6 +52,12 @@ public class MiembroService implements IMiembroService{
 	public Optional<Miembro> findByCorreo(String correo) {
 		// TODO Auto-generated method stub
 		return miembroRepo.findByUser(correo);
+	}
+
+	@Override
+	public void Update(Miembro miembro) {
+		// TODO Auto-generated method stub
+		miembroRepo.save(miembro);
 	}
 
 }

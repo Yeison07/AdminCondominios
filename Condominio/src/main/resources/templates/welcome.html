@@ -16,10 +16,10 @@
                 <p>HOME</p>
                 <img src="img/icons/home.svg" alt="">
             </div>
-            <div class="login-container">
-                <img src="img/icons/user.svg" alt="">
-                <p>Iniciar sesion</p>
-            </div>
+            	<form th:action="@{/logout}" method="post">
+							<input type="submit" value="Cerrar Sesion" />
+						</form>
+			</div>
         </div>
     </header>
     <div class="main-container">

@@ -23,12 +23,18 @@
         </div>
     </header>
     <div class="main-container">
-        <p>Deudas</p>
+    <div class="container-servicio-text">
+            <p class="servicio-text">Deudas</p>
+            <hr>
+        </div>
+    <div class="background-img-container">
+    <img class="deuda-back" src="img/bckg/kelly-sikkema-M98NRBuzbpc-unsplash.jpg" alt="">
+    </div>
+        
         <p>A dia de hoy estan son sus deudas, puede generar un recibo para cancelarlar a tiempo para evitar sobrecarga en el precio, cualquier duda
             sobre estos gastos comuniquese con el administrador de su condominio</p>
             <div>
-                
-                        <table class="table-deudas">
+                <table class="table-deudas">
                 <tr>
                     <th>ID</th>
                     <th>Descripcion</th>
@@ -37,23 +43,14 @@
                     <th>Tipo de gasto</th>
                     <th>Recibo</th>
                 </tr>
-                <tr>
-                    <td>32</td>
-                    <td>Aaaaan</td>
-                    <td>330000</td>
-                    <td>22/22/22222</td>
-                    <td>Drogas</td>
+                <tr th:each="gastos:${gastos}">
+                    <td th:text="${gastos.id}"></td>
+                    <td th:text="${gastos.descripcio}"></td>
+                    <td th:text="${gastos.valor}"></td>
+                    <td th:text="${gastos.pago_oportuno}"></td>
+                    <td th:text="${gastos.tipoGasto.descripcion}"></td>
                     <td>
-                        <input type="submit" value="Generar recibo">
-                    </td>
-                </tr>
-                <tr>
-                    <td>32</td>
-                    <td>Aaaaan</td>
-                    <td>330000</td>
-                    <td>22/22/22222</td>
-                    <td>Drogas</td>
-                    <td>
+                    <a th:href="@{generarRecibo/{id}(id=${gastos.id})}">
                         <input type="submit" value="Generar recibo">
                     </td>
                 </tr>
