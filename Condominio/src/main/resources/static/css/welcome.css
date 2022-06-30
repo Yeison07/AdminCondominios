@@ -69,3 +69,14 @@ input{
 footer{
     margin-top: 15em;
 }
+
+@media (max-width:1800px){
+	
+	.img-pay{
+    left: 40em;
+}
+
+.img-coffe{
+    right: 22em;
+}
+}

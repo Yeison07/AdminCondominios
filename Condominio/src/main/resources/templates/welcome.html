@@ -12,18 +12,34 @@
 <body>
     <header>
         <div class="header-back">
+    		<a th:href="@{/welcome}">
             <div class="home-container">
                 <p>HOME</p>
                 <img src="img/icons/home.svg" alt="">
             </div>
+            </a>
+			 <a th:href="@{/servicio}">
+			<div class="home-container">
+           <p>SERVICIOS</p>
+            <img alt="" src="img/icons/circle_custome.png">
+			</div>
+			</a>
+			<a th:href="@{/deuda}">
+			<div class="home-container">
+           <p>COBROS</p>
+             <img alt="" src="img/icons/credit-card.png">
+			</div>
+			</a>
+			<div class="home-container">
             	<form th:action="@{/logout}" method="post">
 							<input type="submit" value="Cerrar Sesion" />
-						</form>
+				</form>
+				<img alt="" src="img/icons/logout.png">
 			</div>
         </div>
     </header>
     <div class="main-container">
-        <p class="welcome-text">Bievenido usuario X</p> 
+        <p class="welcome-text">Bievenido</p> 
     </div>
     <img class="back-welcome" src="img/bckg/neal-e-johnson-ddK3u7QVWJQ-unsplash.jpg" alt="">
     <div class="main-container">
@@ -32,9 +48,9 @@
             <a th:href="@{/deuda}">
             <div class="select-deudas">
                 <input type="btn" value="Consultar deudas">
-            </div>
-            <img class="img-pay" src="img/icons/pay.svg" alt="">
+            </div>        
             </a>
+            <img class="img-pay" src="img/icons/pay.svg" alt="">
             <a th:href="@{/servicio}">
             <div class="select-servicio">
                 <input type="btn" value="Reservar un servicio">
